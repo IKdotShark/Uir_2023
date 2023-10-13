@@ -16,9 +16,9 @@ def num2():
     b = -1
     h = 0.15
     x = 4.0
-    while (x < 5.5):
-        f = a*((x**b+x)/3-x**(3/4))
-        print("f(",x,")= ", f)
+    while (x < 5.6):
+        f = a*((x**b+x)/3)-x**(3/4)
+        print("f(",round(x,3),")= ", f)
         x += h
 
 def num3():
@@ -45,10 +45,10 @@ def num4():
 
 
 def num5():
-    v1 = float(input())
-    v2 = float(input())
-    s1 = float(input())
-    t = float(input())
+    v1 = float(input("Input v1: "))
+    v2 = float(input("Input v2: "))
+    s1 = float(input("Input s1: "))
+    t = float(input("Input t: "))
     s2 = (v1+v2)*t
     print("S = ", s1 + s2)
 
@@ -57,7 +57,7 @@ def num6():
     try:
         a = int(input("Input a>=1: "))
         b = int(input("Input b<=100: "))
-        if ((a >= 1) or (b <= 100)):
+        if ((a >= 1) and (b <= 100)):
             print("a^2+b^2 = ", a ** 2 + b ** 2)
             print("a^2-b^2 = ", a ** 2 - b ** 2,)
             print("a^2/b^2 = ", round((a ** 2) / (b ** 2), 3),)
