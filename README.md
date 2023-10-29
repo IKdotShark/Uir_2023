@@ -44,8 +44,16 @@ x = (C1·B2 – C2·B1)/D,        y = (A1·C2 – A2·C1)/D,
 Выходные данные: вывести в первой строке значение х, а  во второй строке y  с точностью до 4 цифр в дробной части.
   9.Три предпринимателя - Давыдов, Петров и Максимов вложили в совместную организацию предприятия по производству специальной дачной мебели деньги. Первый вложил 60 тыс. руб., второй - 90 тыс. руб., а третий - 150 тыс. руб. Они получили прибыль в размере 117 тыс. руб. Сколько денег из прибыли получит каждый из предпринимателей при условии распределения ее пропорционально их вкладам?
 
-- [ ] lab2
+- [x] lab2
+      
+  1. Реализовать просто разовую игру. Для запуска раунда надо перезапускать скрипт. Камень-ножниы-бумага.
+  2. Реализовать игру с последующим приглашением повторить игру.
+  3. Реализовать турнирную игру. При запуске игры пользователю выводится сообщение с выбором режима игры. Если выбран просто игра, то возвращается режим из ур.2. Если выбирает турнир, то предлагается ввести кол-во раундов. После этого проигрывается заданное кол-во   раундов и выводится итог турнира. Например: «Поздравляю, Вы победили со счетом 2:1»
+  4. Необходимо заполнить матрицу А[n*n] по одному из описанных алгоритов. Затем отразить ее "зеркально" вправо, получив при этом матрицу размера B[n*2n]. Полученную матрицу B отразить "зеркально" вниз, полив матрицу C [2n*2n].
+     
+- [ ]
 
+  
 ## ENG description
 The program is written in python version 3.11.5.
 Each of the laboratory works is stored in a separate folder of the form `lab<number_of_lab>`
@@ -88,3 +96,11 @@ where D = A1·B2 – A2·B1.
 Input data: Enter any six numbers A1, B1, C1, A2, B2, C2 (-10<= A1, B1, C1, A2, B2, C2 <=10).
 Output data: print the value of x in the first line, and y in the second line with an accuracy of 4 digits in the fractional part.
   9. Three entrepreneurs - Davydov, Petrov and Maximov invested money in the joint organization of the enterprise for the production of special country furniture. The first invested 60 thousand rubles, the second - 90 thousand rubles, and the third - 150 thousand rubles. They made a profit of 117 thousand rubles. How much money will each of the entrepreneurs receive from the profit, provided it is distributed in proportion to their contributions?
+
+- [x] lab 2
+  1. Implement just a one-time game. To start a round, you need to restart the script. Rock-paper-scissor.
+  2. Implement the game followed by an invitation to repeat the game.
+  3. Implement a tournament game. When starting the game, the user is presented with a message indicating the choice of game mode. If just a game is selected, then the mode from level 2 returns.
+  If you select a tournament, you are prompted to enter the number of rounds. After this, the specified number of rounds is played and the result of the tournament is displayed. For example: “Congratulations, you won with a score of 2:1”
+  4. It is necessary to fill out the matrix A[n*n] using one of the described algorithms. Then “mirror” it to the right, resulting in a matrix of size B[n*2n].
+  The resulting matrix B is “mirrored” downwards, filling the matrix C [2n*2n].
