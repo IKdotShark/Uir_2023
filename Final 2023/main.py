@@ -2,7 +2,6 @@ import psutil
 import ctypes
 from ctypes import wintypes
 import time
-import datetime
 import os
 from weekly_stats import weekly
 from func_data_time import data_time
