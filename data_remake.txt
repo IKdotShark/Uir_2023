@@ -1,2 +1,0 @@
-input n,b
-print(b)
