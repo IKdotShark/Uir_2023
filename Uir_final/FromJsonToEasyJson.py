@@ -1,21 +1,15 @@
 import json
 
-def extract_blocks(input_file, output_file):
-    with open(input_file, "r") as f:
-        data = json.load(f)
+# Open and read the data.json file
+with open('data.json', 'r') as file:
+    data = json.load(file)
 
-    blocks = data["blocks"]
+# Extract the blocks with text from the parsed data
+blocks_with_text = [block for block in data['blocks'] if 'text' in block and block['text']]
 
-    cleaned_blocks = []
-    for block in blocks:
-        cleaned_blocks.append(block["text"])
+# Sort the blocks by the 'y' coordinate in descending order
+sorted_blocks = sorted(blocks_with_text, key=lambda block: -block['y'])
 
-    cleaned_data = {"blocks": cleaned_blocks}
-
-    with open(output_file, "w") as f:
-        json.dump(cleaned_data, f, indent=4)
-
-
-input_file = "data_copy.json"
-output_file = "data_remake.json"
-extract_blocks(input_file, output_file)
+# Write the sorted blocks into a new JSON file
+with open('sorted_blocks.json', 'w') as file:
+    json.dump(sorted_blocks, file)
