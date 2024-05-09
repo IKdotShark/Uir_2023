@@ -14,5 +14,5 @@ texts.reverse()
 code = '\n'.join(texts)
 
 # Write the Python code into a new Python file
-with open('output.py', 'w') as file:
+with open('output.txt', 'w') as file:
     file.write(code)

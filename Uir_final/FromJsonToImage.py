@@ -2,9 +2,22 @@ import json
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import networkx as nx
+from Module_user_file import choose_file
+import tkinter as tk
+from tkinter import messagebox
+
+file_path = choose_file()
+
+if not file_path.endswith('.json'):
+    tk.Tk().withdraw()  # скрываем основное окно
+    messagebox.showerror("Ошибка", "Выбранный файл не является файлом JSON.")
+    exit()
 
 # Load the JSON data
-with open('data.json') as f:
+if file_path is None:
+    exit()
+
+with open(file_path) as f:
     data = json.load(f)
 
 # Find the maximum y-coordinate
