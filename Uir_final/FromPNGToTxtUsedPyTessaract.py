@@ -1,18 +1,11 @@
 import pytesseract
-from PIL import Image
+import cv2
 
-# Specify the path to the Tesseract executable
+pytesseract.pytesseract.tesseract_cmd = "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
 
-# Open the image file
-img = Image.open('more_test.png')
+img = cv2.imread("block_diagram.png")
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-extracted_text = pytesseract.image_to_string(img)
-
-# Путь к файлу для сохранения текста
-output_file_path = 'test.txt'
-
-# Сохранение извлеченного текста в файл
-with open(output_file_path, 'w', encoding='utf-8') as f:
-    f.write(extracted_text)
-
-print("Текст успешно извлечен и сохранен в файл test.txt")
+#config = r'--oem 3 --psm 6'
+with open("output.txt",'w') as file:
+    file.write(pytesseract.image_to_string(img))

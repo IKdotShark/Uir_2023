@@ -1,15 +1,23 @@
 import json
+from Module_user_file import choose_file
+import tkinter as tk
+from tkinter import messagebox
 
-# Open and read the data.json file
-with open('data.json', 'r') as file:
-    data = json.load(file)
+def simplification():
+    file_path = choose_file()
 
-# Extract the blocks with text from the parsed data
-blocks_with_text = [block for block in data['blocks'] if 'text' in block and block['text']]
+    if not file_path.endswith('.json'):
+        tk.Tk().withdraw()  # скрываем основное окно
+        messagebox.showerror("Ошибка", "Выбранный файл не является файлом JSON.")
+        exit()
 
-# Sort the blocks by the 'y' coordinate in descending order
-sorted_blocks = sorted(blocks_with_text, key=lambda block: -block['y'])
+    # Load the JSON data
+    if file_path is None:
+        exit()
 
-# Write the sorted blocks into a new JSON file
-with open('sorted_blocks.json', 'w') as file:
-    json.dump(sorted_blocks, file)
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    blocks_with_text = [block for block in data['blocks'] if 'text' in block and block['text']]
+    sorted_blocks = sorted(blocks_with_text, key=lambda block: -block['y'])
+    with open('sorted_blocks.json', 'w') as file:
+        json.dump(sorted_blocks, file)
