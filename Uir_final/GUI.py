@@ -19,6 +19,8 @@ def convert_json_to_img():
 
 def convert_img_to_code():
     messagebox.showwarning("Предупреждение", "Конвертация из фото в код работает некорректно")
+    subprocess.run(["python", "FromPNGToTxtUsedPyTessaract.py"])
+    subprocess.run(["python", "FinalCodeCreator.py"])
 
 def exit_program():
     root.destroy()
